@@ -31,7 +31,7 @@ export const sidebarData: SidebarData = {
   },
   teams: [
     {
-      name: '786 Engineering Works',
+      name: 'Asim Weaving',
       logo: Command,
       plan: 'Admin Dashboard',
     },
