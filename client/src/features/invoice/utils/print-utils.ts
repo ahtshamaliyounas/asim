@@ -153,11 +153,13 @@ export const generateInvoiceHTML = (data: PrintInvoiceData): string => {
     
     body {
       font-family: 'Inter', 'Manrope', 'Noto Nastaliq Urdu', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.3;
+      font-size: 11px;
+      line-height: 1.2;
       margin: 0;
-      padding: 8px;
-      width: 300px;
+      padding: 4px;
+      width: 80mm;
+      max-width: 100%;
+      box-sizing: border-box;
       background: white;
       color: #000;
       direction: rtl;
@@ -165,120 +167,146 @@ export const generateInvoiceHTML = (data: PrintInvoiceData): string => {
     
     .receipt-header {
       text-align: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       border-bottom: 2px solid #000;
-      padding-bottom: 8px;
+      padding-bottom: 4px;
+      overflow: hidden;
+      word-wrap: break-word;
     }
     
     .company-logo {
-      max-width: 120px;
+      max-width: 100px;
       height: auto;
-      margin: 0 auto 8px;
+      margin: 0 auto 4px;
       display: block;
     }
     
     .business-name {
-      font-size: 16px;
+      font-size: 13px;
       font-weight: bold;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       text-transform: uppercase;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .business-info {
-      font-size: 9px;
-      margin-bottom: 1px;
+      font-size: 8px;
+      margin-bottom: 0px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .invoice-info {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       border-bottom: 1px dashed #000;
-      padding-bottom: 8px;
+      padding-bottom: 4px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .info-row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 2px;
-      font-size: 11px;
+      margin-bottom: 1px;
+      font-size: 9px;
+      gap: 2px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .info-label {
       font-weight: bold;
+      flex-shrink: 0;
     }
     
     .items-section {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .items-header {
       border-bottom: 1px solid #000;
-      padding-bottom: 3px;
-      margin-bottom: 5px;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
       font-weight: bold;
-      font-size: 10px;
+      font-size: 8px;
     }
     
     .item-row {
-      margin-bottom: 6px;
-      padding-bottom: 3px;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
       border-bottom: 1px dotted #ccc;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .item-name {
       font-weight: bold;
-      font-size: 11px;
+      font-size: 9px;
       margin-bottom: 1px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .item-details {
-      font-size: 9px;
+      font-size: 8px;
       color: #555;
       display: flex;
       justify-content: space-between;
+      gap: 2px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .totals-section {
       border-top: 2px solid #000;
-      padding-top: 8px;
-      margin-bottom: 12px;
+      padding-top: 4px;
+      margin-bottom: 6px;
     }
     
     .total-row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 2px;
-      font-size: 11px;
+      margin-bottom: 1px;
+      font-size: 9px;
+      gap: 2px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .total-final {
       font-weight: bold;
-      font-size: 13px;
+      font-size: 10px;
       border-top: 1px solid #000;
-      padding-top: 3px;
-      margin-top: 3px;
+      padding-top: 2px;
+      margin-top: 2px;
     }
     
     .payment-section {
-      margin-bottom: 12px;
+      margin-bottom: 6px;
       border-top: 1px dashed #000;
-      padding-top: 8px;
+      padding-top: 4px;
     }
     
     .barcode-section {
       text-align: center;
-      margin: 12px 0;
-      padding: 8px 0;
+      margin: 6px 0;
+      padding: 4px 0;
       border-top: 1px dashed #000;
       border-bottom: 1px dashed #000;
     }
     
     .barcode {
       font-family: 'Libre Barcode 39', 'Courier New', monospace;
-      font-size: 20px;
-      letter-spacing: 1px;
-      margin: 6px 0;
+      font-size: 16px;
+      letter-spacing: 0px;
+      margin: 4px 0;
       font-weight: normal;
       direction: ltr;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .barcode-text {
@@ -287,39 +315,39 @@ export const generateInvoiceHTML = (data: PrintInvoiceData): string => {
     }
     
     .notes-section {
-      margin: 12px 0;
-      padding: 8px 0;
+      margin: 6px 0;
+      padding: 4px 0;
       border-top: 1px dashed #000;
-      font-size: 9px;
+      font-size: 8px;
     }
     
     .footer {
       text-align: center;
-      font-size: 9px;
-      margin-top: 12px;
+      font-size: 8px;
+      margin-top: 6px;
       border-top: 2px solid #000;
-      padding-top: 8px;
+      padding-top: 4px;
     }
     
     .footer-line {
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     
     .no-print {
       text-align: center;
-      margin: 20px 0;
-      padding: 15px;
+      margin: 12px 0 0 0;
+      padding: 8px 4px;
       background: #f5f5f5;
       border: 1px solid #ddd;
-      border-radius: 5px;
+      border-radius: 3px;
     }
     
     .print-btn {
-      padding: 8px 16px;
-      margin: 0 5px;
-      font-size: 12px;
+      padding: 6px 10px;
+      margin: 0 3px;
+      font-size: 10px;
       border: none;
-      border-radius: 3px;
+      border-radius: 2px;
       cursor: pointer;
       font-family: inherit;
     }
@@ -336,16 +364,17 @@ export const generateInvoiceHTML = (data: PrintInvoiceData): string => {
     
     .highlight {
       background: #ffffcc;
-      padding: 1px 2px;
+      padding: 0px 1px;
     }
     
     @media screen {
       body {
-        max-width: 350px;
-        margin: 20px auto;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        padding: 20px;
-        border-radius: 8px;
+        width: 80mm;
+        max-width: 100%;
+        margin: 15px auto;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 4px;
+        border-radius: 5px;
       }
     }
   </style>
@@ -435,23 +464,23 @@ export const generateInvoiceHTML = (data: PrintInvoiceData): string => {
   
   ${type !== 'pending' ? `
     <div class="payment-section">
-      <div class="total-row" style="font-size: 11px; font-weight: bold; margin-bottom: 3px; padding-bottom: 3px;">
+      <div class="total-row" style="font-size: 9px; font-weight: bold; margin-bottom: 2px; padding-bottom: 2px;">
         <span>${urduTexts.current_invoice}:</span>
         <span>${formatCurrency(total)}</span>
       </div>
       ${(hasPrevious && customerId !== 'walk-in') ? `
-      <div class="total-row" style="font-size: 10px; color: #666; margin-bottom: 3px;">
+      <div class="total-row" style="font-size: 8px; color: #666; margin-bottom: 2px;">
         <span>${urduTexts.previous_balance}:</span>
         <span style="color: ${previousBalance > 0 ? '#d32f2f' : previousBalance < 0 ? '#2e7d32' : '#666'}">
           ${formatCurrency(Math.abs(previousBalance))} ${previousBalance > 0 ? '(Dr)' : previousBalance < 0 ? '(Cr)' : ''}
         </span>
       </div>
       ` : ''}
-      <div class="total-row" style="font-size: 11px; font-weight: bold; margin-bottom: 3px; padding-bottom: 3px; border-bottom: 1px solid #000; color: #d32f2f;">
+      <div class="total-row" style="font-size: 9px; font-weight: bold; margin-bottom: 2px; padding-bottom: 2px; border-bottom: 1px solid #000; color: #d32f2f;">
         <span>کل رقم:</span>
         <span>${formatCurrency(totalWithPrev)}</span>
       </div>
-      <div class="total-row" style="margin-bottom: 3px;">
+      <div class="total-row" style="margin-bottom: 2px;">
         <span>${urduTexts.paid}:</span>
         <span class="highlight">${formatCurrency(paid)}</span>
       </div>
@@ -463,7 +492,7 @@ export const generateInvoiceHTML = (data: PrintInvoiceData): string => {
   ` : ''}
   
   <div class="barcode-section">
-    <div style="font-size: 10px; margin-bottom: 4px;">${urduTexts.invoice_number}</div>
+    <div style="font-size: 8px; margin-bottom: 2px;">${urduTexts.invoice_number}</div>
     <div class="barcode">${generateBarcodeText(invoiceNumber)}</div>
     <div class="barcode-text">${invoiceNumber}</div>
   </div>
@@ -1128,7 +1157,7 @@ export const generateA4InvoiceHTML = (data: PrintInvoiceData): string => {
 }
 
 export const openPrintWindow = (htmlContent: string): void => {
-  const printWindow = window.open('', '_blank', 'width=400,height=700,scrollbars=yes,resizable=yes')
+  const printWindow = window.open('', '_blank', 'width=350,height=600,scrollbars=yes,resizable=yes')
   
   if (printWindow) {
     printWindow.document.write(htmlContent)
